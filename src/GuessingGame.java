@@ -10,11 +10,12 @@
  */
 public class GuessingGame extends javax.swing.JFrame {
 
-    /**
-     * Creates new form GuessingGame
-     */
+    int myGuess;
+    GuessMachine gm;
+
     public GuessingGame() {
         initComponents();
+        gm = new GuessMachine();
     }
 
     /**
@@ -42,7 +43,6 @@ public class GuessingGame extends javax.swing.JFrame {
         jLabel2.setText("Enter Your Guess From 1 to 100");
 
         txtguess.setColumns(10);
-        txtguess.setText("                 ");
         txtguess.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtguessActionPerformed(evt);
@@ -89,7 +89,7 @@ public class GuessingGame extends javax.swing.JFrame {
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lblattempts)))))
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,7 +106,7 @@ public class GuessingGame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblattempts))
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
@@ -117,9 +117,13 @@ public class GuessingGame extends javax.swing.JFrame {
     }//GEN-LAST:event_txtguessActionPerformed
 
     private void btnsubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsubmitActionPerformed
-        int number = Integer.parseInt(txtguess.getText());
-        lblresult.setText("You guessed a "+number);
-        lblattempts.setText(" "+1);
+        myGuess = Integer.parseInt(txtguess.getText());
+        if (gm.setGuess(myGuess)) {
+            lblresult.setText("You guessed " + myGuess + gm.giveHint());
+        } else {
+            lblresult.setText("Invalid - must be from 1 to 100");
+        }
+        lblattempts.setText(""+gm.getNumGuesses());
     }//GEN-LAST:event_btnsubmitActionPerformed
 
     /**
@@ -164,6 +168,6 @@ public class GuessingGame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lblattempts;
     private javax.swing.JLabel lblresult;
-    private javax.swing.JTextField txtguess;
+    public javax.swing.JTextField txtguess;
     // End of variables declaration//GEN-END:variables
 }
