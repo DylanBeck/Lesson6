@@ -1,3 +1,4 @@
+//package Lesson6;
 import javax.sound.midi.SysexMessage;
 
 public class LibraryInterface {
@@ -18,17 +19,15 @@ public class LibraryInterface {
         Patron p = new Patron("Miles Davis");
     }
 
-    System.out.printIn (
-
-    "Lending 4 books to "+ p.getName());
-    if(p.borrow (b1)) System.out.printIn(b1.getTitle() +"successfully borrowed.");
-    else              System.out.printIn(b1.getTitle() + " could not be borrowed.");
-     if(p.borrow (b2))System.out.printIn(b2.getTitle() +"successfully borrowed.");
-    else              System.out.printIn(b2.getTitle() + " could not be borrowed.");
-     if(p.borrow (b3))System.out.printIn(b3.getTitle() +"successfully borrowed.");
-    else              System.out.printIn(b3.getTitle() + " could not be borrowed.");
-     if(p.borrow (b4))System.out.printIn(b4.getTitle() +"successfully borrowed.");
-    else              System.out.printIn(b4.getTitle() + " could not be borrowed.");
-     if(p.borrow (b5))System.out.printIn(b5.getTitle() +"successfully borrowed.");
-    else              System.out.printIn(b5.getTitle() + " could not be borrowed.");
+    //System.out.printIn ("Lending 4 books to "+ p.getName());
+    //if(p.borrow (b1)) System.out.println(b1.getTitle() +"successfully borrowed.");
+    //else              System.out.println(b1.getTitle() + " could not be borrowed.");
+    // if(p.borrow (b2))System.out.println(b2.getTitle() +"successfully borrowed.");
+   // else              System.out.println(b2.getTitle() + " could not be borrowed.");
+   //  if(p.borrow (b3))System.out.println(b3.getTitle() +"successfully borrowed.");
+   // else              System.out.println(b3.getTitle() + " could not be borrowed.");
+   //  if(p.borrow (b4))System.out.println(b4.getTitle() +"successfully borrowed.");
+   // else              System.out.println(b4.getTitle() + " could not be borrowed.");
+    // if(p.borrow (b5))System.out.println(b5.getTitle() +"successfully borrowed.");
+   // else              System.out.println(b5.getTitle() + " could not be borrowed.");
 }
