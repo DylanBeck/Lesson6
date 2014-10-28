@@ -17,6 +17,7 @@ public class LibraryInterface {
         System.out.println(b4);
         System.out.println(b5);
         Patron p = new Patron("Miles Davis");
+        System.out.println(p);
     }
 
     //System.out.printIn ("Lending 4 books to "+ p.getName());

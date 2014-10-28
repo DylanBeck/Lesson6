@@ -4,11 +4,11 @@ public class Book {
     private String title, author;
 
    public Book() {
-       // title = "";
-        //author = "";
+        title = "";
+        author = "";
     }
     public Book(String t, String a){     
-        //title = t;
-        //author = a;     
+        title = t;
+        author = a;     
     }
 }
